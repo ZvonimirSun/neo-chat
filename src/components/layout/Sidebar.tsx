@@ -8,8 +8,8 @@ import {
   Workspace,
   SessionMessageTree,
 } from "@/types";
-import { Logo } from "../ui/Icons";
 import { PRODUCT_NAME } from "@/lib/product";
+import ProductLogo from "@/components/ui/ProductLogo";
 import { useChatStore } from "@/store/core/chatStore";
 import { useCoreSettingsStore } from "@/store/core/coreSettingsStore";
 import { useSetLocale } from "@/i18n/useSetLocale";
@@ -784,12 +784,12 @@ const Sidebar: React.FC<SidebarProps> = ({
             <>
               <button
                 type="button"
-                aria-label={t("goHomeAria")}
+                aria-label={t("goHomeAria", { name: PRODUCT_NAME })}
                 className="flex min-w-0 flex-1 items-center gap-2 rounded-lg px-2 text-lg font-bold text-gray-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/60 dark:text-foreground"
                 onClick={onLogoClick}
               >
                 <div className="w-8 h-8 flex items-center justify-center shrink-0">
-                  <Logo className="w-7 h-7" />
+                  <ProductLogo className="h-7 w-7 object-contain" />
                 </div>
                 <span className="truncate bg-clip-text text-transparent bg-[linear-gradient(to_right,#00DEB9,#03B2DE,#1D88E1)] animate-in fade-in duration-300 whitespace-nowrap">
                   {PRODUCT_NAME}
@@ -815,7 +815,7 @@ const Sidebar: React.FC<SidebarProps> = ({
                 onClick={toggleSidebar}
               >
                 <div className="absolute inset-0 flex items-center justify-center transition-[opacity,transform] duration-200 group-hover:scale-90 group-hover:opacity-0 group-focus-visible:scale-90 group-focus-visible:opacity-0">
-                  <Logo className="w-7 h-7" />
+                  <ProductLogo className="h-7 w-7 object-contain" />
                 </div>
                 <PanelLeftOpen
                   size={18}

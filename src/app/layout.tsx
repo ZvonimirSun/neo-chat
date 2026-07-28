@@ -9,6 +9,7 @@ import {
   normalizeSeoLocale,
   SITE_NAME,
 } from "@/lib/seo";
+import { PRODUCT_FAVICON_URL, PRODUCT_LOGO_URL } from "@/lib/product";
 import {
   DARK_THEME_COLOR,
   LIGHT_THEME_COLOR,
@@ -37,10 +38,20 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     icons: {
       icon: [
-        { url: "/favicon.ico" },
-        { url: "/logo.png", sizes: "192x192", type: "image/png" },
+        { url: PRODUCT_FAVICON_URL },
+        {
+          url: PRODUCT_LOGO_URL || "/logo.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
       ],
-      apple: [{ url: "/logo.png", sizes: "192x192", type: "image/png" }],
+      apple: [
+        {
+          url: PRODUCT_LOGO_URL || "/logo.png",
+          sizes: "192x192",
+          type: "image/png",
+        },
+      ],
     },
     appleWebApp: {
       capable: true,

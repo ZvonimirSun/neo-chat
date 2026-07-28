@@ -11,7 +11,7 @@ import MessageInput, { MessageInputRef } from "@/components/chat/MessageInput";
 import AssistantHeader from "@/components/assistant/AssistantHeader";
 import Tooltip from "@/components/ui/Tooltip";
 import FollowUpQuestions from "@/components/chat/FollowUpQuestions";
-import { Logo } from "@/components/ui/Icons";
+import ProductLogo from "@/components/ui/ProductLogo";
 import type { ModelInfo } from "@/services/api/chatService";
 import type { ChatPanel, SettingsTabId } from "@/lib/chat/panelUrlState";
 import type {
@@ -27,6 +27,7 @@ import type {
 import { getMessageBranchInfo } from "@/lib/chat/messageTree";
 import { getActiveMessagePath } from "@/lib/chat/messageTree";
 import type { GlobalSearchNavigationTarget } from "@/lib/global-search";
+import { PRODUCT_NAME } from "@/lib/product";
 import { useChatStore } from "@/store/core/chatStore";
 
 const ImagePreview = dynamic(() => import("@/components/media/ImagePreview"), {
@@ -604,10 +605,10 @@ const ChatAppShell = ({
                     }`}
                   >
                     <div className="flex h-10 w-10 shrink-0 items-center justify-center md:h-11 md:w-11">
-                      <Logo className="h-10 w-10 md:h-11 md:w-11" />
+                      <ProductLogo className="h-10 w-10 object-contain md:h-11 md:w-11" />
                     </div>
                     <h1 className="neoChatWordmark bg-clip-text text-[1.75rem] font-bold leading-none tracking-[0.01em] text-transparent bg-[linear-gradient(to_right,#00DEB9,#03B2DE,#1D88E1)]">
-                      {t("productName")}
+                      {PRODUCT_NAME}
                     </h1>
                   </div>
                 )}

@@ -21,9 +21,9 @@ describe("ChatApp first screen composition", () => {
     expect(chatSurface).toContain("emptyChatSurface");
     expect(chatSurface).not.toContain('src="/logo.png"');
     expect(chatSurface).toContain(
-      'import { Logo } from "@/components/ui/Icons";',
+      'import ProductLogo from "@/components/ui/ProductLogo";',
     );
-    expect(chatSurface).toContain('t("productName")');
+    expect(chatSurface).toContain("{PRODUCT_NAME}");
     expect(chatSurface).not.toContain('t("productSlogan")');
     expect(chatSurface).toContain("neoChatWordmark");
     expect(chatSurface).toContain(

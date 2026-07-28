@@ -101,10 +101,13 @@ registry lookups survive across instances.
 
 ## Public URLs
 
-| Variable               | Purpose                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Public site URL used by app metadata and generated public links.                |
-| `NEXT_PUBLIC_API_URL`  | Optional public API base URL override. Leave empty for same-origin deployments. |
+| Variable                   | Purpose                                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `NEXT_PUBLIC_APP_NAME`     | Public application name used by page metadata, the sidebar, and the welcome screen.                      |
+| `NEXT_PUBLIC_APP_LOGO_URL` | Optional public logo URL used by the sidebar and welcome screen. Accepts a root-relative or HTTP(S) URL. |
+| `NEXT_PUBLIC_FAVICON_URL`  | Optional public favicon URL. Accepts a root-relative or HTTP(S) URL and defaults to `/favicon.ico`.      |
+| `NEXT_PUBLIC_SITE_URL`     | Public site URL used by app metadata and generated public links.                                         |
+| `NEXT_PUBLIC_API_URL`      | Optional public API base URL override. Leave empty for same-origin deployments.                          |
 
 ## Default Model Provider
 
